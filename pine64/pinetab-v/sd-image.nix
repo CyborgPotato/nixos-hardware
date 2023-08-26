@@ -33,10 +33,10 @@ in {
       EOF
 
       eval $(partx $img -o START,SECTORS --nr 1 --pairs)
-      dd conv=notrunc if=${firmware.spl}/share/pine64-star64/spl.bin of=$img seek=$START count=$SECTORS
+      dd conv=notrunc if=${firmware.spl}/share/pine64-pinetabv/spl.bin of=$img seek=$START count=$SECTORS
 
       eval $(partx $img -o START,SECTORS --nr 2 --pairs)
-      dd conv=notrunc if=${firmware.uboot-fit-image}/share/pine64-star64/star64_fw_payload.img of=$img seek=$START count=$SECTORS
+      dd conv=notrunc if=${firmware.uboot-fit-image}/share/pine64-pinetabv/pinetabv_fw_payload.img of=$img seek=$START count=$SECTORS
     '';
 
     populateRootCommands = ''
