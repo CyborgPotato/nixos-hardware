@@ -36,7 +36,7 @@
     kernelPatches = map (p: {patch = p;}) patches;
     structuredExtraConfig = with lib.kernel; {
       # Enable Panel
-      DRM_PANEL_STARFIVE_10INCH = yes;
+      # DRM_PANEL_STARFIVE_10INCH = yes;
       # Disable DRM
       DRM = no; # TODO: Test latest kernel w/ https://lists.freedesktop.org/archives/dri-devel/2023-August/418776.html
       DRM_IMG = no;
