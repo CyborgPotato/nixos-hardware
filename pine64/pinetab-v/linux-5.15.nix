@@ -8,8 +8,8 @@
   fishWaldoSrc = fetchFromGitHub {
     owner = "FishWaldo";
     repo = "Star64_linux";
-    rev = "9a02bb009aad11b8ce16eb34155aa4e2c66c0069";
-    hash = "sha256-5oKNAF5Ik8a/JUxcHPQd/AEuPgCJF8SLmQkkP+9uzww=";
+    rev = "c7d5e25012314b25a8ca1237f14385122c530d6e";
+    hash = "sha256-ZGAft3r08hNUS+CEUoVn2K/lgsZ/L3Z9RtBmtN1lDrs=";
   };
 
   patches = [
@@ -24,7 +24,7 @@
     })
     ./rtc-starfive-irq-desc.patch
   ];
-  version = "5.15.127";
+  version = "5.15.130";
   
   linuxPkg = { ... }@args: buildLinux (args // {
     inherit version;
