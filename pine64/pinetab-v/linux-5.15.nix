@@ -60,4 +60,4 @@
     extraMeta.branch = "5.15";
   } // (args.argsOverride or { }));
   
-in lib.recurseIntoAttrs (linuxPackagesFor (callPackage linuxPkg { }))
+in callPackage linuxPkg { }
