@@ -1,0 +1,117 @@
+diff --git a/drivers/gpu/drm/img/img-rogue/include/linux_sw_sync.h b/drivers/gpu/drm/img/img-rogue/include/linux_sw_sync.h
+index c12c65029..a35f58f65 100644
+--- a/drivers/gpu/drm/img/img-rogue/include/linux_sw_sync.h
++++ b/drivers/gpu/drm/img/img-rogue/include/linux_sw_sync.h
+@@ -46,7 +46,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <linux/types.h>
+ 
+ #include "pvrsrv_sync_km.h"
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ 
+ #endif /* defined(SUPPORT_NATIVE_FENCE_SYNC) */
+ #endif
+diff --git a/drivers/gpu/drm/img/img-rogue/include/pvr_fd_sync_kernel.h b/drivers/gpu/drm/img/img-rogue/include/pvr_fd_sync_kernel.h
+index 3645e2907..c3925506f 100644
+--- a/drivers/gpu/drm/img/img-rogue/include/pvr_fd_sync_kernel.h
++++ b/drivers/gpu/drm/img/img-rogue/include/pvr_fd_sync_kernel.h
+@@ -48,7 +48,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <linux/types.h>
+ #include <linux/ioctl.h>
+ 
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ 
+ #define PVR_SYNC_MAX_QUERY_FENCE_POINTS 14
+ 
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/module_common.h b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/module_common.h
+index c7d1ebd6a..cfdde6864 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/module_common.h
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/module_common.h
+@@ -43,7 +43,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #ifndef MODULE_COMMON_H
+ #define MODULE_COMMON_H
+ 
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ 
+ /* DRVNAME is the name we use to register our driver. */
+ #define DRVNAME PVR_LDM_DRIVER_REGISTRATION_NAME
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/private_data.h b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/private_data.h
+index 60a1fac0b..94c645fcf 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/private_data.h
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/private_data.h
+@@ -46,7 +46,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <linux/fs.h>
+ 
+ #include "connection_server.h"
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ 
+ #define PVR_SRVKM_PRIV_DATA_IDX 0
+ #define PVR_SYNC_PRIV_DATA_IDX  1
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_bridge_k.c b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_bridge_k.c
+index 7211ef025..163e3da4c 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_bridge_k.c
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_bridge_k.c
+@@ -65,7 +65,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <drm/drmP.h>
+ #endif
+ 
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ #include "pvr_drv.h"
+ 
+ #include "env_connection.h"
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_drm.c b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_drm.c
+index 2b3cd5c47..4fbdac718 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_drm.c
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_drm.c
+@@ -64,7 +64,7 @@
+ #include <linux/pm_runtime.h>
+ 
+ #include "module_common.h"
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ #include "pvr_drv.h"
+ #include "pvrversion.h"
+ #include "services_kernel_client.h"
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_common.c b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_common.c
+index 60ba3555e..d3f482872 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_common.c
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_common.c
+@@ -43,7 +43,7 @@
+ 
+ #include <linux/slab.h>
+ 
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ #include "pvr_sync_api.h"
+ #include "pvr_sync_ioctl_common.h"
+ 
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_drm.c b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_drm.c
+index 423c8d3a7..5cef739bc 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_drm.c
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/pvr_sync_ioctl_drm.c
+@@ -42,7 +42,7 @@
+  */
+ 
+ #include "pvr_drv.h"
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ #include "private_data.h"
+ #include "env_connection.h"
+ #include "pvr_sync_api.h"
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/services_kernel_client.h b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/services_kernel_client.h
+index aaca47f1e..faa585fd4 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/services_kernel_client.h
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/services_kernel_client.h
+@@ -56,7 +56,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include "sync_checkpoint_external.h"
+ 
+ /* included for the define PVRSRV_LINUX_DEV_INIT_ON_PROBE */
+-#include "pvr_drm.h"
++#include "drm/pvr_drm.h"
+ 
+ #ifndef __pvrsrv_defined_struct_enum__
+ 

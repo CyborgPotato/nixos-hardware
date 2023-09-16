@@ -23,6 +23,7 @@
       hash = "sha256-EY0lno+HkY5mradBUPII3qqu0xh+BVQRzveCQcaht0M=";
     })
     ./rtc-starfive-irq-desc.patch
+    ./drm-img-rogue-common.patch
   ];
   version = "5.15.130";
   
