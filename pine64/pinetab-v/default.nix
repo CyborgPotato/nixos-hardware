@@ -4,9 +4,9 @@
       allowMissing = true;
     });
 
-    linux-ptv = (pkgs.callPackage ./linux-5.15.nix {
+    linux-ptv = pkgs.lib.recurseIntoAttrs ( pkgs.linuxPackagesFor (pkgs.callPackage ./linux-5.15.nix {
       inherit (config.boot) kernelPatches;
-    });
+    }));
   })];
 
   # Somehow ttyS0 doesn't get enabled by default
@@ -19,7 +19,7 @@
     supportedFilesystems =
       lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
     consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault (pkgs.lib.recurseIntoAttrs (pkgs.linuxPackagesFor pkgs.linux-ptv));
+    kernelPackages = lib.mkDefault pkgs.linux-ptv;
 
     kernelParams =
       lib.mkDefault [ "console=tty0" "console=ttyS0,115200n8" "earlycon=sbi" ];
