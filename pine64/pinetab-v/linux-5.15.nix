@@ -4,7 +4,7 @@
 , fetchFromGitHub
 , linuxPackagesFor
 , callPackage
-, ... }: let
+, ... }@args: let
   fishWaldoSrc = fetchFromGitHub {
     owner = "FishWaldo";
     repo = "Star64_linux";
@@ -27,7 +27,7 @@
   ];
   version = "5.15.130";
   
-  linuxPkg = { ... }@args: buildLinux (args // {
+  linux-ptv = {
     inherit version;
     modDirVersion = version;
 
@@ -59,6 +59,7 @@
       VIDEO_OV5640 = no; # conflicts with starfive VIN_SENSOR_OV5640
     };
     extraMeta.branch = "5.15";
-  } // (args.argsOverride or { }));
+  };
   
-in callPackage linuxPkg { }
+in buildLinux (linux-ptv { 
+} // args.argsOverride or { })
