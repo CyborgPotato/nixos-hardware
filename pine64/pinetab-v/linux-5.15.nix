@@ -61,5 +61,4 @@
     extraMeta.branch = "5.15";
   };
   
-in buildLinux (linux-ptv { 
-} // args.argsOverride or { })
+in buildLinux (linux-ptv // args.argsOverride or { })
