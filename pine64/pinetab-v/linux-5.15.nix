@@ -40,7 +40,7 @@
       # DRM_PANEL_STARFIVE_10INCH = yes;
       # Disable DRM
       # TODO: Test latest kernel w/ https://lists.freedesktop.org/archives/dri-devel/2023-August/418776.html
-      # DRM_IMG = no;
+      DRM_IMG = module;
       # DRM_IMG_ROGUE = no;
       DRM_I2C_NXP_TDA998X = no; # https://github.com/starfive-tech/linux/pull/86
       DRM_VERISILICON = no;
