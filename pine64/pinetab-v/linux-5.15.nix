@@ -8,8 +8,8 @@
   fishWaldoSrc = fetchFromGitHub {
     owner = "FishWaldo";
     repo = "Star64_linux";
-    rev = "c7d5e25012314b25a8ca1237f14385122c530d6e";
-    hash = "sha256-ZGAft3r08hNUS+CEUoVn2K/lgsZ/L3Z9RtBmtN1lDrs=";
+    rev = "1456c984f15e21e28fb8a9ce96d0ca10e61a71c4";
+    hash = "";
   };
 
   patches = [
