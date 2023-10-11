@@ -9,7 +9,7 @@
     owner = "FishWaldo";
     repo = "Star64_linux";
     rev = "1456c984f15e21e28fb8a9ce96d0ca10e61a71c4";
-    hash = "";
+    hash = "sha256-I5wzmxiY7PWpahYCqTOAmYEiJvpRPpUV7S21Kn9lLwg=";
   };
 
   patches = [
@@ -25,7 +25,7 @@
     ./rtc-starfive-irq-desc.patch
     ./drm-img-rogue-common.patch
   ];
-  version = "5.15.130";
+  version = "5.15.131";
   
   linux-ptv = {
     inherit version;
@@ -40,8 +40,8 @@
       # DRM_PANEL_STARFIVE_10INCH = yes;
       # Disable DRM
       # TODO: Test latest kernel w/ https://lists.freedesktop.org/archives/dri-devel/2023-August/418776.html
-      DRM_IMG = module;
-      DRM_IMG_ROGUE = module;
+      # DRM_IMG = module;
+      # DRM_IMG_ROGUE = module;
       DRM_I2C_NXP_TDA998X = no; # https://github.com/starfive-tech/linux/pull/86
       DRM_VERISILICON = no;
 
