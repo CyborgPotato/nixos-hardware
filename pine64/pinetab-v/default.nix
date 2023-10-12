@@ -9,7 +9,7 @@
     }));
   })];
 
-  # Somehow ttyS0 doesn't get enabled by default
+  # Somehow ttyS0 dOAoesn't get enabled by default
   systemd.services."serial-getty@ttyS0".enable = lib.mkDefault true;
   systemd.services."serial-getty@ttyS0".wantedBy = lib.mkDefault [ "getty.target" ];
 
@@ -21,8 +21,7 @@
     consoleLogLevel = lib.mkDefault 7;
     kernelPackages = lib.mkDefault pkgs.linux-ptv;
 
-    kernelParams =
-      lib.mkDefault [ "console=tty0" "console=ttyS0,115200n8" "earlycon=sbi" ];
+    kernelParams = lib.mkDefault [ "console=ttyS0" ];
 
     initrd.availableKernelModules = [ "dw_mmc_starfive" ];
 
