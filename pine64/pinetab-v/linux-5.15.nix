@@ -37,14 +37,19 @@
     kernelPatches = map (p: {patch = p;}) patches;
     structuredExtraConfig = with lib.kernel; {
       # Enable Panel
+      # DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
+      # DRM_PANEL_JADARD_JD9365DA_H3=yes;
+      DRM_VERISILICON=no;
+      STARFIVE_INNO_HDMI=yes;
+      STARFIVE_DSI=yes;
+      # Mipi regulator, need this to load
+      REGULATOR_AXP15060=yes;
       # DRM_PANEL_STARFIVE_10INCH = yes;
       # Disable DRM
       # TODO: Test latest kernel w/ https://lists.freedesktop.org/archives/dri-devel/2023-August/418776.html
       # DRM_IMG = module;
       # DRM_IMG_ROGUE = module;
       DRM_I2C_NXP_TDA998X = no; # https://github.com/starfive-tech/linux/pull/86
-      DRM_VERISILICON = no;
-
       # Crypto Features gone
       CRYPTO_RMD128 = no;
       CRYPTO_RMD256 = no;
