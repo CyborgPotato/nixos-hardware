@@ -803,6 +803,8 @@ SECURITY_SELINUX=yes;
 SECURITY_APPARMOR=yes;
 DEFAULT_SECURITY_DAC=yes;
 CRYPTO_USER=yes;
+# Unable to build RMD_128, no make target for rmd128.o
+CRYPTO_RMD128=no;
 # CRYPTO_TEST=module;
 CRYPTO_ECDH=yes;
 CRYPTO_ECB=yes;
