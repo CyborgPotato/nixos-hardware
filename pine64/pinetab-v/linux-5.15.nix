@@ -22,6 +22,10 @@
       url = "https://github.com/starfive-tech/linux/pull/108/commits/9ae8cb751c4d1fd2146b279a8e67887590e9d07a.diff";
       hash = "sha256-EY0lno+HkY5mradBUPII3qqu0xh+BVQRzveCQcaht0M=";
     })
+    (fetchpatch {
+      url = "https://github.com/Fishwaldo/Star64_linux/commit/b1d5cf36b4cf2ef2a7cd6aad717cae599d990403.diff";
+      hash = "sha256-0vk5ic6q537aa3g4l03mmsbiivx5j4rdfi5gfnv65wvdjx71mmf1";
+    })
     ./rtc-starfive-irq-desc.patch
     ./drm-img-rogue-common.patch
   ];
@@ -581,8 +585,8 @@ VIDEO_GC02M2=module;
 VIDEO_OV5640=no;
 DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
 DRM_PANEL_JADARD_JD9365DA_H3=yes;
-DRM_I2C_NXP_TDA998X=no; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
-DRM_VERISILICON=no;
+DRM_I2C_NXP_TDA998X=yes; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
+DRM_VERISILICON=yes;
 STARFIVE_INNO_HDMI=yes;
 STARFIVE_DSI=yes;
 DRM_IMG_ROGUE=module;
