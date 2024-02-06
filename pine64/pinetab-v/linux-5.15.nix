@@ -25,6 +25,10 @@
     (fetchpatch {
       url = "https://github.com/Fishwaldo/Star64_linux/commit/b1d5cf36b4cf2ef2a7cd6aad717cae599d990403.diff";
       hash = "sha256-BeiZYcn4sbv74GwbVs0sz5Y58NMJrQG6H7uZXe5Mjfo=";
+      includes = [
+"drivers/gpu/drm/i2c/tda998x_pin.c"
+"drivers/gpu/drm/verisilicon/vs_drv.c"
+      ];
     })
     ./rtc-starfive-irq-desc.patch
     ./drm-img-rogue-common.patch
