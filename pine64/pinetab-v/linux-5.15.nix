@@ -24,7 +24,7 @@
     })
     (fetchpatch {
       url = "https://github.com/Fishwaldo/Star64_linux/commit/b1d5cf36b4cf2ef2a7cd6aad717cae599d990403.diff";
-      hash = "sha256-0vk5ic6q537aa3g4l03mmsbiivx5j4rdfi5gfnv65wvdjx71mmf1";
+      hash = "";
     })
     ./rtc-starfive-irq-desc.patch
     ./drm-img-rogue-common.patch
