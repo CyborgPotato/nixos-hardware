@@ -47,11 +47,12 @@
       VIDEO_OV5640=no;
       # DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
       # DRM_PANEL_JADARD_JD9365DA_H3=yes;
-      # DRM_I2C_NXP_TDA998X=yes; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
-      # DRM_VERISILICON=yes;
-      # STARFIVE_INNO_HDMI=yes;
-      # STARFIVE_DSI=yes;
-      # DRM_IMG_ROGUE=module;
+      DRM_I2C_NXP_TDA998X=yes; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
+      DRM_VERISILICON=yes;
+      STARFIVE_INNO_HDMI=no;
+      STARFIVE_DSI=yes;
+      PHY_M31_DPHY_RX0=yes;
+      DRM_IMG_ROGUE=module;
       DRM_LEGACY= lib.mkForce yes;
       CRYPTO_RMD128=no;
       CRYPTO_RMD256=no;
