@@ -1,0 +1,30 @@
+diff --git a/arch/riscv/boot/dts/starfive/jh7110-pine64-pinetabv.dtsi b/arch/riscv/boot/dts/starfive/jh7110-pine64-pinetabv.dtsi
+index 3bc32e965..c7777b62b 100755
+--- a/arch/riscv/boot/dts/starfive/jh7110-pine64-pinetabv.dtsi
++++ b/arch/riscv/boot/dts/starfive/jh7110-pine64-pinetabv.dtsi
+@@ -159,15 +159,11 @@ battery: battery {
+ 		constant-charge-current-max-microamp = <2000000>;
+ 		constant-charge-voltage-max-microvolt = <4350000>;
+ 		voltage-max-design-microvolt = <4350000>;
+-		voltage-min-design-microvolt = <3400000>;
++		voltage-min-design-microvolt = <3000000>;
+ 
+ 		ocv-capacity-celsius = <20>;
+-		ocv-capacity-table-0 = <4322000 100>, <4250000 95>, <4192000 90>, <4136000 85>,
+-				       <4080000 80>, <4022000 75>, <3972000 70>, <3928000 65>,
+-				       <3885000 60>, <3833000 55>, <3798000 50>, <3780000 45>,
+-				       <3776000 40>, <3773000 35>, <3755000 30>, <3706000 25>,
+-				       <3640000 20>, <3589000 15>, <3535000 10>, <3492000 5>,
+-				       <3400000 0>;
++		ocv-capacity-table-0 = <4314000 100>, <4304000 78>, <4301000 39>, <4167000 32>,
++				       <3785000 19>,  <3625000 5>,  <3543000 2>,  <3008000 0>;
+ 	};
+ 
+ 	leds {
+@@ -995,4 +991,4 @@ &ptc {
+ 
+ &sof_dsp {
+ 	memory-region = <&hifi4_reserved>;
+-};
+\ No newline at end of file
++};

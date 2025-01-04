@@ -32,6 +32,7 @@
     })
     ./rtc-starfive-irq-desc.patch
     ./drm-img-rogue-common.patch
+    ./pinetabv-dtsi-battery.patch
   ];
   version = "5.15.131";
   
