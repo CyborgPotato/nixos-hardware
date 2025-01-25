@@ -8,7 +8,7 @@
       inherit (config.boot) kernelPatches;
     };
 
-    linux-ptv-6 = pkgs.callPackage ./linux-5.15.nix {
+    linux-ptv-6 = pkgs.callPackage ./linux-6.6.nix {
       inherit (config.boot) kernelPatches;
     };
   })];
