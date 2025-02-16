@@ -40,7 +40,7 @@
      ./v4l2.patch
   ];
 
-  version = "6.6.20+";
+  version = "6.6.20";
   
   linux-ptv = {
     inherit version;

@@ -8,9 +8,11 @@
       inherit (config.boot) kernelPatches;
     };
 
-    linux-ptv-6 = pkgs.callPackage ./linux-6.6.nix {
+    linux-ptv-6' = pkgs.callPackage ./linux-6.6.nix {
       inherit (config.boot) kernelPatches;
     };
+
+    linux-ptv-6 = self.linux-ptv-6'.overrideAttrs (old: {nativeBuildInputs = old.nativeBuildInputs ++ [pkgs.breakpointHook];});
   })];
 
   # Somehow ttyS0 dOAoesn't get enabled by default
@@ -23,7 +25,7 @@
     supportedFilesystems =
       lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
     consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv-6);
+    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv);
 
     kernelParams = lib.mkDefault [ "console=ttyS0" ];
 
