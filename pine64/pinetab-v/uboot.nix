@@ -16,6 +16,7 @@
     "spl/u-boot-spl.bin"
     "tools/mkimage"
   ];
+  env.NIX_CFLAGS_COMPILE = "-Wno-int-conversion -Wno-implicit-function-declaration";
 }).overrideAttrs (old: {
   patches = [];
 })
