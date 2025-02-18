@@ -1,0 +1,23 @@
+commit 051d9a23ae628a31b74b3c64aa048e0e8b520e9b
+Author: David <DavidCrompton@duck.com>
+Date:   Tue Feb 18 17:02:28 2025 +0000
+
+    Weird img-rogue fix?
+
+diff --git a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/Kbuild.mk b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/Kbuild.mk
+index f3bf4f1cc..51f4dbebd 100644
+--- a/drivers/gpu/drm/img/img-rogue/services/server/env/linux/Kbuild.mk
++++ b/drivers/gpu/drm/img/img-rogue/services/server/env/linux/Kbuild.mk
+@@ -60,6 +62,12 @@ ccflags-y += \
+  -I$(TOP)/services/server/env/linux/$(PVR_ARCH) -I$(TOP)/services/server/env/linux \
+  -I$(TOP)/kernel/drivers/staging/imgtec
+ 
++# Should be uncessary fix: Weird Nix/Lix build bug?
++CFLAGS_pvr_drm.o = -I$(TOP)/include/drm
++CFLAGS_pvr_bridge_k.o = -I$(TOP)/include/drm
++CFLAGS_pvr_sync_ioctl_drm.o = -I$(TOP)/include/drm
++CFLAGS_pvr_sync_ioctl_common.o = -I$(TOP)/include/drm
++
+ # System dir
+ ifneq ($(wildcard $(TOP)/services/system/$(PVR_ARCH)/$(PVR_SYSTEM)/Kbuild.mk),)
+ SYSTEM_DIR := $(TOP)/services/system/$(PVR_ARCH)/$(PVR_SYSTEM)
