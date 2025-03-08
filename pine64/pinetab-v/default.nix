@@ -25,7 +25,7 @@
     supportedFilesystems =
       lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
     consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv);
+    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv-6');
 
     kernelParams = lib.mkDefault [ "console=ttyS0" ];
 

@@ -36,6 +36,7 @@
 #    ./drm-img-rogue-common.patch
 #    ./pinetabv-dtsi-battery.patch
      ./img-rogue.patch
+     ./img-rogue-inc.patch
      ./tda998x.patch
      ./v4l2.patch
   ];
@@ -50,9 +51,9 @@
     defconfig = "starfive_visionfive2_defconfig";
     
     src = fishWaldoSrc;
-    kernelPatches = map (p: {patch = p;}) patches;
+    kernelPatches = map (p: {patch = p; name = p;}) patches;
     structuredExtraConfig = with lib.kernel; {
-#      VIDEO_OV5640=no;
+      VIDEO_OV5640=no;
       # DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
       # DRM_PANEL_JADARD_JD9365DA_H3=yes;
 #      DRM_I2C_NXP_TDA998X=yes; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
@@ -62,6 +63,7 @@
 #      PHY_M31_DPHY_RX0=yes;
       DRM_IMG_ROGUE=yes;
       DRM_LEGACY= lib.mkForce yes;
+      USB_WIFI_ECR6600U=no;
 #      CRYPTO_RMD128=no;
 #      CRYPTO_RMD256=no;
 #      CRYPTO_RMD320=no;
@@ -74,3 +76,4 @@
   };
 
 in buildLinux (linux-ptv // args.argsOverride or { })
+
