@@ -1,0 +1,19 @@
+commit c2b4813ce892bd3403ce87e4a8a28b509f5bebef
+Author: David <DavidCrompton@duck.com>
+Date:   Fri Mar 21 20:36:43 2025 +0000
+
+    fix Null error
+
+diff --git a/drivers/media/platform/starfive/v4l2_driver/stfcamss.c b/drivers/media/platform/starfive/v4l2_driver/stfcamss.c
+index c4eec1481..27ae350f3 100644
+--- a/drivers/media/platform/starfive/v4l2_driver/stfcamss.c
++++ b/drivers/media/platform/starfive/v4l2_driver/stfcamss.c
+@@ -597,7 +597,7 @@ static int stfcamss_register_mediadevice_subdevnodes(
+ 
+ 		ret = media_create_pad_link(sensor, i,
+ 			input, STF_PAD_SINK,
+-			NULL);
++			0);
+ 		if (ret < 0) {
+ 			st_err(ST_CAMSS,
+ 				"Failed to link %s->%s entities: %d\n",
