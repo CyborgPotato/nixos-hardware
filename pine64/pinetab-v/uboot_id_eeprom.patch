@@ -1,0 +1,18 @@
+commit 9df817e2f3ef55e041a5f8b9dbb250395a2b70a7
+Author: David <DavidCrompton@duck.com>
+Date:   Mon Mar 24 22:59:08 2025 +0000
+
+    ID_EEPROM Kconfig option
+
+diff --git a/board/pine64/pinetabv/Kconfig b/board/pine64/pinetabv/Kconfig
+index dcec6753..5b80c23a 100644
+--- a/board/pine64/pinetabv/Kconfig
++++ b/board/pine64/pinetabv/Kconfig
+@@ -49,4 +49,7 @@ config BOARD_SPECIFIC_OPTIONS # dummy
+ 	imply PHY_LIB
+ 	imply PHY_MSCC
+ 
++config ID_EEPROM
++        bool "Enable EEPROM identification"
++
+ endif
