@@ -1,0 +1,12 @@
+diff --git a/configs/pine64_pinetabv_defconfig b/configs/pine64_pinetabv_defconfig
+index 0d3f214..203b152 100644
+--- a/configs/pine64_pinetabv_defconfig
++++ b/configs/pine64_pinetabv_defconfig
+@@ -7,6 +7,7 @@ CONFIG_ENV_OFFSET=0xF0000
+ CONFIG_SPL_DM_SPI=y
+ CONFIG_DEFAULT_DEVICE_TREE="pine64_pinetabv"
+ CONFIG_SPL_MMC_SUPPORT=y
++CONFIG_MMC_HS200_SUPPORT=y
+ CONFIG_SPL_DRIVERS_MISC=y
+ CONFIG_SPL=y
+ CONFIG_SPL_SPI_FLASH_SUPPORT=y
