@@ -24,10 +24,14 @@
   '';
   env.NIX_CFLAGS_COMPILE = "-Wno-int-conversion -Wno-implicit-function-declaration";
 }).overrideAttrs (old: {
+  nativeBuildInputs = old.nativeBuildInputs ++ [pkgs.ncurses pkgs.pkg-config];
   patches = [
     # HS200 support introduced in:
     # https://github.com/starfive-tech/u-boot/commit/8bc74ce3e17fc569c612f4f1c70d1be4c94475f5#diff-42780b1add333460b8a0217175c7aaf0bff94bab13c89cda996fb5d0f8c0f904
     ./uboot_hs200_support.patch
+    ./uboot_mmc_supports_tuning.patch
+    # CONFIG_ID_EEPROM
+    ./uboot_id_eeprom.patch
   ];
 })
 

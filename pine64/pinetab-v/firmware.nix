@@ -4,7 +4,7 @@ let
   uboot = callPackage ./uboot.nix { };
   opensbi = callPackage ./opensbi.nix {
     withPayload = "${uboot}/u-boot.bin";
-    withFDT = "${uboot}/starfive_visionfive2.dtb";
+    withFDT = "${uboot}/pine64_pinetabv.dtb";
   };
   spl-tool = pkgsBuildHost.callPackage ./spl-tool.nix { };
   its-file = writeText "pinetabv-uboot-fit-image.its" ''
@@ -39,6 +39,11 @@ let
   '';
 in rec {
   inherit opensbi uboot;
+
+  nixpkgs.overlays = [(self: super: {
+    ubootPinetabV = uboot;
+  })];
+  
   spl = stdenv.mkDerivation {
     name = "pine64-pinetabv-spl";
     depsBuildBuild = [ spl-tool ];
