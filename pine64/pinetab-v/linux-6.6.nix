@@ -76,6 +76,8 @@
 #      CRYPTO_DEV_CCREE=no;
     };
     extraMeta.branch = "6.6";
+
+    autoModules=false;
   };
 
 in buildLinux (linux-ptv // args.argsOverride or { })
