@@ -1,0 +1,18 @@
+commit 195281ef9faa1b995b8fea085aec19a7d97254e6
+Author: David <DavidCrompton@duck.com>
+Date:   Tue Mar 25 01:22:54 2025 +0000
+
+    MMC_SUPPORTS_TUNING include config
+
+diff --git a/include/configs/pine64-pinetabv.h b/include/configs/pine64-pinetabv.h
+index 795394e4..df32af0b 100644
+--- a/include/configs/pine64-pinetabv.h
++++ b/include/configs/pine64-pinetabv.h
+@@ -88,6 +88,7 @@
+ 
+ /* HACK these should have '#if defined (stuff) around them like zynqp*/
+ #define BOOT_TARGET_DEVICES(func) func(MMC, mmc, 0) func(DHCP, dhcp, na)
++#define MMC_SUPPORTS_TUNING
+ 
+ #include <config_distro_bootcmd.h>
+ 
