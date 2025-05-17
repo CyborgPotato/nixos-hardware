@@ -25,7 +25,7 @@
     supportedFilesystems =
       lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
     consoleLogLevel = lib.mkDefault 7;
-    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv-6');
+    kernelPackages = lib.mkDefault (pkgs.linuxPackagesFor pkgs.linux-ptv);
 
     kernelParams = lib.mkDefault [ "console=ttyS0" ];
 
@@ -44,6 +44,6 @@
   zramSwap.enable = true;
 
   hardware.deviceTree.name =
-    lib.mkDefault "starfive/jh7110-pinetab-v-20230614.dtb";
-    #lib.mkDefault "starfive/jh7110-pine64-pinetabv.dtb";
+    #lib.mkDefault "starfive/jh7110-pinetab-v-20230614.dtb";
+    lib.mkDefault "starfive/jh7110-pine64-pinetabv.dtb";
 }
