@@ -54,8 +54,8 @@
     structuredExtraConfig = with lib.kernel; {
       VIDEO_OV5640=no;
       RTL8852BU=yes;
-      # DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
-      # DRM_PANEL_JADARD_JD9365DA_H3=yes;
+      DRM_PANEL_BOE_TH101MB31UIG002_28A=yes;
+      DRM_PANEL_JADARD_JD9365DA_H3=yes;
       DRM_I2C_NXP_TDA998X=yes; #https://github.com/Fishwaldo/Star64_linux/pull/1/files#diff-e668dcf0da970969e5a307d49bc4e70dc18be80b434274709b705103a43f8cb5
       DRM_VERISILICON=yes;
       STARFIVE_INNO_HDMI=no;
@@ -77,7 +77,7 @@
     };
     extraMeta.branch = "6.6";
 
-    # autoModules=false;
+    autoModules=false;
   };
 
 in buildLinux (linux-ptv // args.argsOverride or { })
